@@ -31,24 +31,6 @@ hist(elect_data$Global_active_power,xlab="Global Actie Power(kilowatts)",col="re
 dev.copy(png, file="~/Documents/Learning_R/Coursera/Data_Exploration/Assignment/Plot_1.png") #Copy plot to a png file 
 dev.off()
 
-## PLOT-2
-date_2=elect_data[ ,c('Weekday','Global_active_power')]
-
-elect_data$newdate <- with(elect_data, as.POSIXct(paste(Date, Time), format="%m-%d-%Y %H:%M"))
-plot(Global_active_power ~ newdate, data=elect_data, type="b", col="blue")
-
-head(elect_data)
-
-with(date,lines(Weekday,Global_active_power,Weekday),na.rm=T)
-
-plot(date$Weekday,date$Global_active_power, type='l',col='red')
-
-line(Global_active_power~Weekday, data=date, xlab='Weekday', ylab='Global Active Power (kilowatts)',
-        names=c("Thursday","Friday"))
 
 
-
-hist(date$Voltage,col="red")
-
-date2<-date[complete.cases(date)]
 
